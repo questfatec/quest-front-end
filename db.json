@@ -1,0 +1,27 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Quem descobriu o brasil?",
+      "correct_answer": 2,
+      "alternatives": [
+        {
+          "id": 1,
+          "answer": "Cristovão Colombo"
+        },
+        {
+          "id": 2,
+          "answer": "Pedro Alvares Cabral"
+        },
+        {
+          "id": 3,
+          "answer": "Neymar Júnior"
+        },
+        {
+          "id": 4,
+          "answer": "Fausto Silva"
+        }
+      ]
+    }
+  ]
+}
