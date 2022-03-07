@@ -1,6 +1,6 @@
 import './App.css';
 import Menu from './components/Menu/Menu';
-import Question from './components/Menu/question/Question';
+import Question from './components/question/Question';
 
 function App() {
   return (
