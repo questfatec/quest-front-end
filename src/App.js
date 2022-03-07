@@ -1,9 +1,12 @@
-import Home from "./components/Home";
+import './App.css';
+import Menu from './components/Menu/Menu';
+import Question from './components/Menu/question/Question';
 
 function App() {
   return (
     <div className="App">
-      <Home></Home>
+      <Menu></Menu>
+      <Question></Question>
     </div>
   );
 }
