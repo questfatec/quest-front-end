@@ -31,21 +31,21 @@ export default function Question() {
     }
 
     useEffect(() => {
-        fetch("https://questgame300.herokuapp.com/perguntas")
+        fetch("http://localhost:3002")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                questionArray.push(data[1]._id)
+                questionArray.push(data[0]._id)
                 questionArray.push(data[0]._id)
 
                 setAnsweredQuestions(questionArray)
-                setCorrectAnswer(data[0].correct)
+                setCorrectAnswer(data[0].respostaCorreta)
                 setStatement(data[0].question)
 
-                setAlternativeA(data[0].alternativeA);
-                setAlternativeB(data[0].alternativeB);
-                setAlternativeC(data[0].alternativeC);
-                setAlternativeD(data[0].alternativeD);
+                setAlternativeA(data[0].alternativaA);
+                setAlternativeB(data[0].alternativaB);
+                setAlternativeC(data[0].alternativaC);
+                setAlternativeD(data[0].alternativaD);
             })
     }, []);
 
