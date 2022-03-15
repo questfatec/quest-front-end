@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 
 export default function Question() {
 
-    const questionArray = []
+
+    var questionArray = []
     const [answeredQuestions, setAnsweredQuestions] = useState([])
     const [result, setResult] = useState()
 
@@ -20,7 +21,7 @@ export default function Question() {
         console.log(alternative)
         console.log(correctAnswer)
 
-        if(correctAnswer == alternative) {
+        if(correctAnswer === alternative) {
             setResult("Resposta correta!")
         }else{
             setResult("Resposta errada!")
@@ -31,23 +32,23 @@ export default function Question() {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3002")
+        fetch(`https://questgame300.herokuapp.com/perguntas?categoria=Artes e Entretenimento&questoes_ja_respondidas=${answeredQuestions}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                questionArray.push(data[0]._id)
-                questionArray.push(data[0]._id)
+                questionArray.push(data[0].idPergunta.toString())
 
                 setAnsweredQuestions(questionArray)
+                console.log(questionArray)
                 setCorrectAnswer(data[0].respostaCorreta)
-                setStatement(data[0].question)
+                setStatement(data[0].pergunta)
 
                 setAlternativeA(data[0].alternativaA);
                 setAlternativeB(data[0].alternativaB);
                 setAlternativeC(data[0].alternativaC);
                 setAlternativeD(data[0].alternativaD);
             })
-    }, []);
+    }, [result]);
 
     return (
         <div className='question-container'>
