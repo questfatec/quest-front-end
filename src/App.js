@@ -1,12 +1,11 @@
 import './App.css';
-import Menu from './components/Menu/Menu';
-import Question from './components/question/Question';
+import QuestionBlock from './components/QuestionBlock';
 
 function App() {
   return (
     <div className="App">
-      <Menu></Menu>
-      <Question></Question>
+      <h1>Quest Game - FATEC SP</h1>
+      <QuestionBlock></QuestionBlock>
     </div>
   );
 }
