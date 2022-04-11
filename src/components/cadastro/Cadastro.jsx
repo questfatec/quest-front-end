@@ -25,52 +25,52 @@ export default function Cadastro() {
 		else{
 			fetch('https://quest3v2.herokuapp.com/auth/register', {
 				method: 'POST',
+				mode: 'no-cors',
 				headers: { 'Content-Type': 'application/json' },
 				body: {  "name": username,
 				"email": email,
 				"password": password_1}
 			})
 			.then((res) => res.json())
-			.then((res) => navigate("/login"))
 			.then((data) => console.log(data))
 		}
 	}
 
   return (
     <div className="Login">
-      <div class="container">
-		<div class="container-login">
-			<div class="wrap-login">
-				<form onSubmit={submit} class="login-form">
-					<span class="login-form-title">
+      <div className="container">
+		<div className="container-login">
+			<div className="wrap-login">
+				<form onSubmit={submit} className="login-form">
+					<span className="login-form-title">
 						Faça o Cadastro
 					</span>
 
-					<div class="wrap-input margin-top-35 margin-bottom-35">
-						<input class="input-form" type="text" onChange={(e) => setUsername(e.target.value)}  name="email" placeholder="Usuário" autocomplete="off"/>
+					<div className="wrap-input margin-top-35 margin-bottom-35">
+						<input className="input-form" type="text" onChange={(e) => setUsername(e.target.value)}  name="email" placeholder="Usuário" autoComplete="off"/>
 					</div>
 
-                    <div class="wrap-input margin-top-35 margin-bottom-35">
-						<input class="input-form" type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder="email" autocomplete="off"/>
+                    <div className="wrap-input margin-top-35 margin-bottom-35">
+						<input className="input-form" type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder="email" autoComplete="off"/>
 					</div>
 
-					<div class="wrap-input margin-bottom-35">
-						<input class="input-form" type="password" onChange={(e) => setPassword_1(e.target.value)} placeholder="Senha" name="password"/>
+					<div className="wrap-input margin-bottom-35">
+						<input className="input-form" type="password" onChange={(e) => setPassword_1(e.target.value)} placeholder="Senha" name="password"/>
 					</div>
 
-                    <div class="wrap-input margin-bottom-35">
-						<input class="input-form" type="password" onChange={(e) => setPassword_2(e.target.value)} placeholder="Confirmar senha" name="password"/>
+                    <div className="wrap-input margin-bottom-35">
+						<input className="input-form" type="password" onChange={(e) => setPassword_2(e.target.value)} placeholder="Confirmar senha" name="password"/>
 					</div>
 
-					<div class="container-login-form-btn">
-						<button onClick={(e) => setAlert()} type="submit" class="login-form-btn">
+					<div className="container-login-form-btn">
+						<button onClick={(e) => setAlert()} type="submit" className="login-form-btn">
 							Login
 						</button>
 					</div>
 					<p>{alert}</p>
 				</form>
 			</div>
-			<img src={lock} width="350" height="300" class="margin-left-50" />
+			<img src={lock} width="350" height="300" className="margin-left-50" />
 		</div>
 	</div>
     </div>
